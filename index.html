@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introdução ao Javascript</title>
 </head>
+
 <body>
-    
+    <p>Nome do Jogador: </p>
+    <button>Alterar Nome</button>
 </body>
 <script>
-    
+
+    const botao = document.querySelector('button');
+    const paragrafo = document.querySelector('p');
+    botao.addEventListener('click', alterarNome);
+
+    function cotacaoDolar(){
+        return 'A cotação atual é R$' + 5.08;
+    }
+
+    function convertToBRL(dolar){
+        return dolar * 5.08;
+    }
+
+    function alterarNome() {
+        const nome = prompt('Digite seu nome: ');
+        while (!nome) {
+            const nome = prompt('Digite seu nome: ');
+            paragrafo.textContent = 'Nome do Jogador: ' + nome;
+        }
+    }
 </script>
+
 </html>

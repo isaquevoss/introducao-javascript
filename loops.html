@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas de repetição</title>
+</head>
+
+<body>
+<p>
+    
+</p>
+</body>
+<script>
+    const jogadores = [{nome: 'Pelé', posicao:'Atacante'}];
+    const cidades = ['Concórdia','São Paulo','Florianópolis']
+    const paragrafo = document.querySelector('p');
+
+    function exercicio2(){
+        let indiceCidade = prompt('Digite o indice da cidade: ');
+        paragrafo.innerHTML = 'A cidade escolhida foi '+ cidades[indiceCidade];
+    }
+
+    function adicionarJogador(nome, posicao){
+        jogadores.push({nome, posicao});
+    
+    }
+    function mostrarJogadoresSelecionados(){
+        paragrafo.textContent = '';
+        for (let i = 0; i < jogadores.length; i++) {
+        paragrafo.innerHTML += `${jogadores[i].nome} - Posição ${jogadores[i].posicao} <br>`;
+    }  
+    }
+</script>
+
+</html>
