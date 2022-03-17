@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicios</title>
 </head>
+
 <body>
     <button id="paises">paises</button>
     <button id="estados">estados</button>
     <button id="cidades">cidades</button>
-    
-    <p></p>
+
+    <p>
+     
+    </p>
 </body>
 <script>
-    const cidades = ['Concórdia','São Paulo','Florianópolis']
+    const cidades = ['Concórdia', 'São Paulo', 'Florianópolis']
     const paragrafo = document.querySelector('p');
     const botaoCidades = document.getElementById('cidades');
 
-    botaoCidades.addEventListener('click',exercicio2);
+    botaoCidades.addEventListener('click', exercicio3Cidades);
     
-    function exercicio2(){
+    function exercicio3Cidades(){
+        for(let i = 0; i < cidades.length; i++){
+            paragrafo.innerHTML +='Cidade: '+ cidades[i] +'<br>';
+        }
+    }
+
+    function exercicio2() {
         let indiceCidade = prompt('Digite o indice da cidade: ');
-        paragrafo.innerHTML = 'A cidade escolhida foi '+ cidades[indiceCidade];
+        paragrafo.innerHTML = 'A cidade escolhida foi ' + cidades[indiceCidade];
     }
 
 
 </script>
+
 </html>

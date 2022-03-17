@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicios</title>
+</head>
+
+<body>
+    <button id="paises">Paises</button>
+    <button id="estados">Estados</button>
+    <button id="cidades">Cidades</button>
+    <p></p>
+
+
+</body>
+<script>
+
+    //Constantes
+    const cidades = ['Concórdia', 'São Paulo', 'Florianópolis', 'Rio de Janeiro', 'Curitiba'];
+    const estados = ['São Paulo', 'Paraná', 'Santa Catarina', 'Rio de Janeiro', 'Rio Grande do Sul'];
+    const paises = ['Brasil', 'Argentina', 'Uruguai', 'Portugal', 'Espanha'];
+    
+    const botaoCidades = document.getElementById('cidades');
+    const botaoEstados = document.getElementById('estados');
+    const botaoPaises = document.getElementById('paises');
+
+    const paragrafo = document.querySelector('p');
+
+    //função do exercicio 1
+    function exercicio1Cidades() {
+        paragrafo.textContent = cidades[0];
+    }
+    // executando a função do exercicio 1 no click do botão
+   //botaoCidades.addEventListener('click', exercicio1Cidades);
+
+    function exercio2Cidades(){
+        const indiceCidade = prompt('Digite o indice da cidade: ');
+        paragrafo.textContent = cidades[indiceCidade];
+    }
+
+    //botaoCidades.addEventListener('click', exercio2Cidades);
+
+    function exercicio3Cidades(){
+        for(let i = 0;i< cidades.length; i++){
+            paragrafo.textContent += cidades[i];
+        }
+    }
+    //botaoCidades.addEventListener('click', exercicio3Cidades);
+   
+    function exercicio4Cidades(){
+        for(let i = 0;i< cidades.length; i++){
+            paragrafo.textContent += 'Cidade: '+ cidades[i];
+        }
+    }
+    //botaoCidades.addEventListener('click', exercicio4Cidades);
+
+    function exercicio5Cidades(){
+        for(let i = 0;i< cidades.length; i++){
+            paragrafo.innerHTML += 'Cidade: '+ cidades[i] + '<br>';
+        }
+    }
+    botaoCidades.addEventListener('click', exercicio5Cidades);
+
+
+</script>
+
+</html>
