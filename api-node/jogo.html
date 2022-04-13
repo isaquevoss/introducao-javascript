@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+    <style>
+        #screen {
+            border: 10px solid #CCC;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            image-rendering: -moz-crisp-edges;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="screen" height="10" width="10"></canvas>
+    <input id="player-id" type="text" value="">
+    <button onclick="adicionarJogador()">Add player</button>
+
+
+    <script>
+        jogo = {
+            jogadores: [
+                { name: 'jogador1', position: { x: 15, y: 15 } },
+                { name: 'jogador2', position: { x: 20, y: 20 } },
+                { name: 'jogador3', position: { x: 25, y: 25 } },
+                { name: 'jogador4', position: { x: 30, y: 30 } },
+            ],
+        }
+        
+        function moverJogador(nome) {
+            const jogador = jogo.jogadores.find(jogador => {
+                return jogador.name === nome
+            });
+            jogador.position.x += 1;
+        }
+
+        function addJogador(nome) {
+            jogo.jogadores.push({
+                name: nome,
+                position: { x: 0, y: 0 }
+            })
+        }
+    </script>
+</body>
+
+</html>
