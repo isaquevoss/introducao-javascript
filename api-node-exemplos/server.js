@@ -45,11 +45,3 @@ app.listen(3000, () => {
 })
 
 
-function _2doDevs(){
-
-}
-welcome
-
-function welcome(){
-    console.log('Bem vindo ao 2doDevs');
-}
