@@ -1,15 +1,19 @@
-const express = require('express')
-const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
-app.get('/turmas/:idturma/alunos/:idaluno', (req, res) => {
-    res.send('Retornando aluno: ' + req.params.idaluno + ' da  turma '+req.params.idturma)
-})
+async function testeAssincrono() {
+    return 'teste assincrono';
+}
 
 
-app.listen('3000', () => {
-    console.log('server started on port 3000')
-})
+async function teste() {
+
+    console.log('testeajdasf');
+}
+
+async function testeAssincrono2() {
+    const resultado = await testeAssincrono();
+    await teste();
+    console.log('resultado'+resultado)
+}
+
+
+testeAssincrono2();
