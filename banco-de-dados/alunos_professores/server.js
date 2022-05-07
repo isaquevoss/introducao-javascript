@@ -56,6 +56,10 @@ app.post('/alunos', async (req, res) => {
         dataNascimento: req.body.dataNascimento,
         idade: req.body.idade
     }
+    //conectar no bd
+   const conexao = db.connectDB()
+   conexao.run('sql');
+    //gravar o aluno
     const result = await conexao.run(`insert into alunos(nome,turma,dataNascimento,idade ) 
     values(:nome, :turma,:dataNascimento,:idade)`, {
         ':nome': aluno.nome,
@@ -145,8 +149,6 @@ async function start() {
         app.listen(3000, () => {
             console.log('Server started on port 3000')
         })
-
-
     }
     catch (error) {
         console.log('não foi possível iniciar a aplicação');
