@@ -71,8 +71,10 @@ app.patch('/alunos/:id', async (req, res) => {
         ':dataNascimento': aluno.dataNascimento,
         ':idade': aluno.idade
     })
+    alunoRepository.update(aluno);
     res.json(aluno);
 })
+
 app.delete('/alunos/:id', async (req, res) => {
     const retorno = await conexao.run(`DELETE FROM alunos 
     WHERE id = :id`, { ':id': req.params.id });    
@@ -80,8 +82,6 @@ app.delete('/alunos/:id', async (req, res) => {
         message: 'Aluno removido com sucesso'
     })
 });
-
-
 
 app.get('/professores', (req, res) => {
     res.json(db.professores)
@@ -104,6 +104,8 @@ app.post('/professores', (req, res) => {
         escolaridade: req.body.escolaridade
     }
     db.professores.push(professor)
+
+    professor.save();
     res.json(professor);
 })
 
