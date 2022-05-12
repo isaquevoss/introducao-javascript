@@ -38,9 +38,9 @@ app.post('/alunos', async (req, res) => {
 app.put('/alunos/:id', async (req, res) => {
     const aluno = await Aluno.findByPk(req.params.id);
     aluno.nome = req.body.nome;
-    // aluno.dataNascimento = req.body.dataNascimento;
-    // aluno.idade = req.body.idade;
-    // aluno.turma = req.body.turma;
+    aluno.dataNascimento = req.body.dataNascimento;
+    aluno.idade = req.body.idade;
+    aluno.turma = req.body.turma;
     await aluno.save();
     res.json(aluno);
 })
@@ -150,14 +150,26 @@ async function start() {
     conexao = sequelize.connectSequelize();
     await conexao.authenticate();
 
-
-    registrarModels();
+    const Users = conexao.define('user', {
+        email: {
+            type: DataTypes.STRING,
+        },
+        password: {
+            type: DataTypes.STRING,
+        }
+    })
 
     Aluno = conexao.define('aluno', {
         nome: {
             type: Sequelize.STRING,
         },
         turma: {
+            type: Sequelize.STRING,
+        },
+        cpf: {
+            type: Sequelize.STRING,
+        },
+        endereco: {
             type: Sequelize.STRING,
         },
         dataNascimento: {
@@ -168,7 +180,7 @@ async function start() {
         }
 
     });
-    Professor.init({        
+    Professor.init({
         nome: {
             type: DataTypes.STRING,
         },
@@ -177,6 +189,9 @@ async function start() {
         },
         dataNascimento: {
             type: DataTypes.DATE,
+        },
+        endereco: {
+            type: DataTypes.STRING,
         },
         escolaridade: {
             type: DataTypes.STRING,
@@ -188,9 +203,8 @@ async function start() {
         modelName: 'professor' // We need to choose the model name
     });
 
-    const professor = new Professor();
-    professor.nome = 'teste';
-    professor.save();
+    conexao.sync();
+    // await Aluno.sync();
 
     app.listen(3000, () => {//inicia a aplicação
         console.log('Server is running on port 3000');
