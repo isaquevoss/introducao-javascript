@@ -120,3 +120,19 @@ app.listen(3000, async () => {
     await sequelize.sync();
     console.log('app is running on port 3000');
 });
+
+//registrar usuário
+
+//fazer login
+
+//TESTAR No postman requests com o token, sem o token e 
+//com o token inválido
+
+//deixar o token expirar e testar com ele expirado
+
+//fazer o refresh token
+
+//mudar a validade token/refresh para 1 dia, 1 mes, 1hora
+//decodicar no jwt.io e verificar os dados de expiracao
+
+//mudar a APP_KEY, APP_REFRESH_KEY e tentar usar um token antigo

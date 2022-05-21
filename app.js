@@ -1,3 +1,4 @@
+const { application } = require("express");
 
 async function testeAssincrono() {
     return 'teste assincrono';
@@ -17,3 +18,9 @@ async function testeAssincrono2() {
 
 
 testeAssincrono2();
+
+
+
+app.get('/gerarjwt/:dado', (req, res) => {
+    res.send(jwt.sigh(req.params.dado,'asdf'));
+});
