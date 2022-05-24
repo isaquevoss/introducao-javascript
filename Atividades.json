@@ -1,11 +1,22 @@
 [
     {
         "id": 1,
-        "descricao": "Criar uma api com express, body parser e jsonwebtoken"
+        "descricao": "Criar uma api com express, body-parser e jsonwebtoken"
     },
     {
         "id": 2,
-        "descricao": "criar uma rota para gerar um json web token com
-         a informação de um parametro da rota"
+        "descricao": "criar uma rota GET para gerar um json web token com a informação de um parametro da rota"
+    },
+    {
+        "id": 3,
+        "descricao": "criar uma rota para validar o JWT"
+    },
+    {
+        "id": 4,
+        "descricao": "criar uma rota POST para gerar o JWT com os dados do BODY do request"  
+    },
+    {
+        "id": 5,
+        "descricao": "criar uma rota GET que retorne o payload do JWT que foi enviado por parametro"
     }
 ]
