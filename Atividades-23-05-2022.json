@@ -5,23 +5,26 @@
     },
     {
         "id": 2,
-        "descricao": "Criar um middleware que valide o JWT que está no header Authorization"
+        "descricao": "Criar um middleware que valide o JWT que está no header 
+        Authorization"
     },
     {
         "id": 3,
-        "descricao": "Criar um middleware que restrinja o acesso a rotas POST para usuários que não tem acesso"
+        "descricao": "Criar um middleware que restrinja o acesso a rotas POST para 
+        usuários que não tem acesso"
     },
     {
         "id": 4,
-        "descricao": "Criar um middleware que restrinja o acesso a um determinado grupo de rotas"
+        "descricao": "Criar um middleware que restrinja o acesso a um determinado 
+        grupo de rotas"
     }
-]//Informar no payload do JWT um objeto identifique um usuário,
-// para poder validar o acesso a rotas específicas
-//exemplo: 
-// {
-//     "id": 1,
-//     "nome": "João",
-//     "canPost": true,
-//     "canAccessAlunos": true,
-//     "canAccessProfessores": false
-// }
+                ]//Informar no payload do JWT um objeto identifique um usuário,
+                // para poder validar o acesso a rotas específicas
+                //exemplo: 
+                // {
+                //     "id": 1,
+                //     "nome": "João",
+                //     "canPost": true,
+                //     "canAccessAlunos": true,
+                //     "canAccessProfessores": false
+                // }
