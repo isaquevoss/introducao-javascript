@@ -1,0 +1,6 @@
+- criar uma api com express, body-parser e jsonwebtoken
+- gerar os tokens com um arquivo jwt separado
+- criar uma rota de login para receber o token
+- criar um middelware para proteger as rotas após 
+ele validando o token no header authorization
+- criar uma rota após o middleware para testar o funcionamento
