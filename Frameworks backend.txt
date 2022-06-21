@@ -1,0 +1,19 @@
+Python
+ -Django
+
+PHP
+ -Laravel
+ -Lumen
+
+Javascript/typescript
+ -Node.js
+ -Express
+ -Nest.js
+
+FRONT-END
+ -Angular
+ -Vue.js
+ -React
+
+
+
